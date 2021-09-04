@@ -12,6 +12,3 @@ class GetHistoriesFlow:
             users_jsons_list = list(map(lambda history_obj: history_obj.to_json(), histories_list))
             return jsonify({"histories": users_jsons_list})
         return jsonify({"msg": "No hay historias"})
-
-        
-        

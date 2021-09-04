@@ -14,7 +14,7 @@ def server_config(app):
     database_config()
 
 def cors_config(app):
-    CORS(app=app, supports_credentials=True)
+    CORS(app=app, send_wildcard=True)
 
 def database_config():
     DB_URI = os.getenv('DB_URI')
