@@ -17,10 +17,6 @@ create_history_body_schema = {
         "required": True,
         "nullable": False  
     },
-    "patient_age": {
-        "required": True,
-        "nullable": False  
-    },
     "patient_sex": {
         "required": True,
         "nullable": False  

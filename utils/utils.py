@@ -1,6 +1,7 @@
 '''
 utils.py: Modulo para definir los metodos de funcionalidad auxiliar
 '''
+from datetime import datetime
 import requests
 from requests.auth import HTTPBasicAuth
 import os
@@ -35,3 +36,7 @@ def get_csrf_token(user_name, user_password):
     r_token = requests.get(url_token, auth=HTTPBasicAuth(mayan_admin_user, mayan_admin_password), data=payload_token_mayan)
     
     return r_token.cookies.get('csrftoken')
+
+def get_age(born):
+    today = datetime.today()
+    return today.year - born.year - ((today.month, today.day) < (born.month, born.day))
