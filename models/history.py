@@ -1,14 +1,14 @@
 '''
 history.py: Modulo para definir el modelo Historia Clinica
 '''
-from mongoengine import Document, StringField, DateTimeField, BooleanField, IntField
+from mongoengine import Document, StringField, DateTimeField, IntField, SequenceField
 
 
 class History(Document):
     '''
     Clase que define el modelo historia clinica
     '''
-    patient_number = IntField(required=True)
+    history_number = SequenceField()
     patient_name = StringField(required=True, default='')
     patient_dni = StringField(required=True, default='')
     patient_birth_date = DateTimeField(required=False)
@@ -25,7 +25,7 @@ class History(Document):
         '''
         history_dict = {
             "history_id": str(self.pk),
-            'patient_number': self.patient_number,
+            'history_number': self.history_number,
             "patient_name": self.patient_name,
             "patient_dni": self.patient_dni,
             "patient_birth_date": self.patient_birth_date,

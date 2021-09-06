@@ -8,7 +8,6 @@ class CreateHistoryFlow:
     def __call__(self, request):
 
         new_history = History(
-            patient_number=request.form['patient_number'],
             patient_name=request.form["patient_name"],
             patient_dni=request.form['patient_dni'],
             patient_birth_date=request.form['patient_birth_date'],

@@ -1,10 +1,6 @@
 from utils.utils import validate_parameters
 
 create_history_body_schema = {
-    "patient_number":{
-        "required": True,
-        "nullable": False
-    },
     "patient_name": {
         "required": True,
         "nullable": False
