@@ -7,7 +7,14 @@ class CreateHistoryFlow:
 
     def __call__(self, request):
 
+        histories = History.objects()
+
+        history_number = 1
+        if len(histories) > 0:
+            history_number = len(histories) + 1
+
         new_history = History(
+            history_number=history_number,
             patient_name=request.form["patient_name"],
             patient_dni=request.form['patient_dni'],
             patient_birth_date=request.form['patient_birth_date'],
